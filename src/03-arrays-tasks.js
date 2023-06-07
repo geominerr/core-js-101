@@ -7,7 +7,6 @@
  *                                                                                            *
  ******************************************************************************************** */
 
-
 /**
  * Returns an index of the specified element in array or -1 if element is not found
  *
@@ -36,9 +35,10 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-  return Array(len).fill(0).map((_, index) => index * 2 + 1);
+  return Array(len)
+    .fill(0)
+    .map((_, index) => index * 2 + 1);
 }
-
 
 /**
  * Returns the doubled array - elements of the specified array
@@ -55,7 +55,6 @@ function generateOdds(len) {
 function doubleArray(arr) {
   return arr.concat(arr);
 }
-
 
 /**
  * Returns an array of positive numbers from the specified array in original order
@@ -119,7 +118,6 @@ function getUpperCaseStrings(arr) {
   return arr.map((item) => item.toUpperCase());
 }
 
-
 /**
  * Returns the array of string lengths from the specified string array.
  *
@@ -163,7 +161,6 @@ function getHead(arr, n) {
   return arr.slice(0, n);
 }
 
-
 /**
  * Returns the n last items of the specified array
  *
@@ -177,7 +174,6 @@ function getHead(arr, n) {
 function getTail(arr, n) {
   return arr.slice(-n);
 }
-
 
 /**
  * Returns CSV representation of two-dimensional numeric array.
@@ -224,7 +220,6 @@ function toArrayOfSquares(arr) {
   return arr.map((item) => item ** 2);
 }
 
-
 /**
  * Transforms the numeric array to the according moving sum array:
  *     f[n] = x[0] + x[1] + x[2] +...+ x[n]
@@ -239,8 +234,11 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(/* arr */) {
-  throw new Error('Not implemented');
+function getMovingSum(arr) {
+  return arr.reduce((acc, el, index) => {
+    acc.push(el + (acc[index - 1] || 0));
+    return acc;
+  }, []);
 }
 
 /**
@@ -257,7 +255,6 @@ function getMovingSum(/* arr */) {
 function getSecondItems(arr) {
   return arr.filter((_, index) => index % 2 !== 0);
 }
-
 
 /**
  * Propagates every item in sequence its position times
@@ -277,7 +274,6 @@ function propagateItemsByPositionIndex(arr) {
   return arr.map((item, index) => Array(index + 1).fill(item)).flat();
 }
 
-
 /**
  * Returns the 3 largest numbers from the specified array
  *
@@ -294,7 +290,6 @@ function propagateItemsByPositionIndex(arr) {
 function get3TopItems(arr) {
   return arr.sort((a, b) => b - a).slice(0, 3);
 }
-
 
 /**
  * Returns the number of positive numbers from specified array
@@ -316,7 +311,6 @@ function getPositivesCount(arr) {
 
   return Math.max(...arr.filter((item) => typeof item === 'number'));
 }
-
 
 /**
  * Sorts digit names
@@ -347,7 +341,6 @@ function sortDigitNamesByNumericOrder(arr) {
 
   return arr.sort((a, b) => hash[a] - hash[b]);
 }
-
 
 /**
  * Returns the sum of all items in the specified array of numbers
@@ -484,7 +477,7 @@ function getIdentityMatrix(/* n */) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-  const size = (end - start) + 1;
+  const size = end - start + 1;
 
   return Array.from({ length: size }, (_, index) => index + start);
 }
@@ -538,7 +531,6 @@ function group(/* array, keySelector, valueSelector */) {
   throw new Error('Not implemented');
 }
 
-
 /**
  * Projects each element of the specified array to a sequence
  * and flattens the resulting sequences into one array.
@@ -556,7 +548,6 @@ function selectMany(/* arr, childrenSelector */) {
   throw new Error('Not implemented');
 }
 
-
 /**
  * Returns an element from the multidimensional array by the specified indexes.
  *
@@ -572,7 +563,6 @@ function selectMany(/* arr, childrenSelector */) {
 function getElementByIndexes(/* arr, indexes */) {
   throw new Error('Not implemented');
 }
-
 
 /**
  * Swaps the head and tail of the specified array:
@@ -595,7 +585,6 @@ function getElementByIndexes(/* arr, indexes */) {
 function swapHeadAndTail(/* arr */) {
   throw new Error('Not implemented');
 }
-
 
 module.exports = {
   findElement,
