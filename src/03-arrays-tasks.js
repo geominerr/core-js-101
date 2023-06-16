@@ -469,7 +469,6 @@ function getIdentityMatrix(n) {
   }));
 }
 
-
 /**
  * Creates an array of integers from the specified start to end (inclusive)
  *
@@ -598,7 +597,6 @@ function getElementByIndexes(arr, indexes) {
 
   return getElementByIndexes(nestArr, indexes);
 }
-
 
 /**
  * Swaps the head and tail of the specified array:

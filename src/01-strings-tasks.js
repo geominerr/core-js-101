@@ -272,7 +272,6 @@ function encodeToRot13(str) {
   return arrStr.join('');
 }
 
-
 /**
  * Returns true if the value is string; otherwise false.
  * @param {string} value

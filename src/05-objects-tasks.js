@@ -6,7 +6,6 @@
  *                                                                                                *
  ************************************************************************************************ */
 
-
 /**
  * Returns the rectangle object with width and height parameters and getArea() method
  *
@@ -41,7 +40,6 @@ function getJSON(obj) {
   return JSON.stringify(obj);
 }
 
-
 /**
  * Returns the object of specified type from JSON representation
  *
@@ -60,7 +58,6 @@ function fromJSON(proto, json) {
 
   return obj;
 }
-
 
 /**
  * Css selectors builder
